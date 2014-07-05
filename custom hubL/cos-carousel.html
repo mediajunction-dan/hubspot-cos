@@ -1,0 +1,38 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	</ol>
+	
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+		<div class="item active">
+			{% image "slide_one_image" label="Slide One Image", alt="Slide One Image" %}
+			<div class="carousel-caption">
+				{% rich_text "slide_one_content" label="Slide One Content", html="" %}
+			</div>
+		</div>
+		<div class="item">
+			{% image "slide_two_image" label="Slide Two Image", alt="Slide Two Image" %}
+			<div class="carousel-caption">
+				{% rich_text "slide_two_content" label="Slide Two Content", html="" %}
+			</div>
+		</div>
+		<div class="item">
+			{% image "slide_three_image" label="Slide Three Image", alt="Slide Three Image" %}
+			<div class="carousel-caption">
+				{% rich_text "slide_three_content" label="Slide Three Content", html="" %}
+			</div>
+		</div>	
+	</div>
+
+	<!-- Controls -->
+	<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>

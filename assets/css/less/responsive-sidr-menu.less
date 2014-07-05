@@ -1,0 +1,113 @@
+.sidr {
+	display:none;
+	position:absolute;
+	position:fixed;
+	top:0;
+	height:100%;
+	z-index:999999;
+	width:260px;
+	overflow-x:none;
+	overflow-y:auto;
+	color:@white;
+}
+
+.sidr .sidr-inner {
+	padding:0 0 15px;
+}
+
+.sidr .sidr-inner > p {
+	margin-left:15px;
+	margin-right:15px;
+}
+
+.sidr.right {
+	left:auto;
+	right:-260px;
+}
+
+.sidr.left {
+	left:-260px;
+	right:auto;
+}
+
+.sidr h1,.sidr h2,.sidr h3,.sidr h4,.sidr h5,.sidr h6 {
+	font-size:11px;
+	font-weight:400;
+	padding:0 15px;
+	margin:0 0 5px;
+	color:@white;
+	line-height:24px;	
+}
+
+.sidr p {
+	font-size:13px;
+	margin:0 0 12px;
+}
+
+.sidr p a {
+	color:rgba(255,255,255,0.9);
+}
+
+.sidr>p {
+	margin-left:15px;
+	margin-right:15px;
+}
+
+.sidr ul,
+.sidr li,
+.sidr a {display:block; margin:0; padding:0;}
+
+.sidr ul li a,
+.sidr ul li span {text-decoration:none;}
+
+#sidr-id-hs-search-module {
+	padding:0 20px;
+	.sidr-class-hs-form {position:relative;}
+	label {display:none; visibility:hidden;}
+	.sidr-class-input {margin-top:18px;}
+	.sidr-class-hs-input {
+		border-radius:3px !important;
+		position:relative; z-index:0;
+		padding:3px 6px; border:1px solid #a7a7a7;
+	}
+	.sidr-class-hs-button {
+		padding:0 !important; margin:0 !important;
+		width:13px; height:13px; text-indent:-9999px;
+		position:absolute; top:8px; right:8px;
+		background:transparent url(http://cdn2.hubspot.net/hub/331347/file-406565239-png/template_images/icon-search.png) no-repeat 0 0 !important;
+	}
+}
+
+// Right Menu // Corporate Nav
+#touch {
+	background:@gray-dark; border-left:1px solid @gray-darker; font-size:13px;
+	.sidr-inner {padding:20px 0;}
+	ul {
+		border-top-color:transparent; padding:0;
+		li {
+			border-bottom-color:transparent; margin-top:10px;
+			&:first-child {margin-top:0;}
+			a, span {
+				font-family:@font-family-sans-serif; color:@white; font-size:18px; text-transform:uppercase; text-decoration:none; display:block; font-weight:normal; cursor:pointer;
+				line-height:30px; padding:5px 22px;
+				&:hover {color:@brand-primary;}
+			}
+			&.sidr-class-register a {background:@brand-primary !important; color:@white !important;}
+					
+			&.active > a,
+			&.active > span,
+			&.sidr-class-active > a,
+			&.sidr-class-active > span {
+				color:@brand-primary !important; background:@white !important;
+			}
+			& > ul {padding-bottom:10px;}
+			& > ul li {margin-top:0;}
+			& > ul li a,
+			& > ul li span {
+				font-size:14px; padding:10px 22px; color:@gray-light; text-transform:none; line-height:normal;
+				&:hover {color:@white;}
+			}			
+		}
+	}
+
+}

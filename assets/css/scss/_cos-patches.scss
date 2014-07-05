@@ -1,0 +1,74 @@
+// Menu Resets
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul li a,
+.hs-menu-wrapper.hs-menu-flow-vertical li a {max-width:none !important; text-overflow:inherit !important; overflow:visible !important; white-space:normal !important;}
+.hs-menu-wrapper.hs-menu-flow-vertical li a {width:auto !important; max-width:none !important;}
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children ul.hs-menu-children-wrapper li a {width:auto !important;}
+.hs-menu-wrapper.hs-menu-flow-horizontal>ul li.hs-item-has-children ul.hs-menu-children-wrapper li.hs-item-has-children ul.hs-menu-children-wrapper {left:220px !important;}
+
+.row-fluid, .span12,
+.row-fluid [class*="span"] {min-height:0 !important;}
+
+// Share Fix
+.hs-blog-social-share {margin-top:1em; height:auto !important}
+.hs-blog-social-share-list {
+	margin-bottom:0;
+	@include clearfix;
+	.hs-blog-social-share-item {float:none !important; display:inline-block; margin:5px 0;}	
+	.hs-blog-social-share-item-linkedin .IN-widget,
+	.hs-blog-social-share-item-facebook div {position:relative;}
+	
+	.hs-blog-social-share-item-linkedin .IN-widget {top:-2px;}
+	.hs-blog-social-share-item-facebook div {top:-8px; margin:0;}
+}
+
+/* HTML 5 Reset */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+/* Support migrations from wordpress */
+
+.wp-float-left {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.wp-float-right {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+/* Responsive Google Maps */
+
+#map_canvas img, .google-maps img {
+    max-width: none;
+}
+
+/* Responsive Video */
+video {width:100% !important; height:auto !important;}
+.video-container {
+	position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;
+	&.large-video {padding-bottom:76.25%;}
+	iframe,
+	object,
+	embed {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+}
+
+/* line height fix for reCaptcha theme */
+#recaptcha_table td {line-height: 0;}
+.recaptchatable #recaptcha_response_field {min-height: 0;line-height: 12px;}
+
+// Editor Fixes
+.hs-pill-buttons {@include clearfix;}
+.hs-pill-buttons .hs-pill-button {height:30px !important;}

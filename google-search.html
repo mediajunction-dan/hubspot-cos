@@ -1,0 +1,22 @@
+<!-- Google Custom Search Bar -->
+<form class="hs-form" id="cse-search-box" action="RESULTS_PAGE_URL_HERE">
+  <input type="hidden" name="cx" value="SEARCH_ID_HERE" />
+  <input type="hidden" name="ie" value="UTF-8" />
+  <input type="text" name="q" size="31" />
+  <input type="submit" name="sa" value="Search" />
+</form>
+
+<!-- Google Custom Search Results -->
+<script>
+(function() {
+  var cx = 'SEARCH_ID_HERE';
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+      '//www.google.com/cse/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+<gcse:searchresults-only></gcse:searchresults-only>

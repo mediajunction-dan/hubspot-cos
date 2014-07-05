@@ -1,0 +1,83 @@
+<div itemscope itemtype="http://schema.org/Article" class="blog-section">
+    <div class="blog-post-wrapper cell-wrapper">
+         <header class="section post-header">
+         	<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="{{ site_settings.company_name }}"></span>         	
+         	<p>
+         	<a class="return" href="/blog">Return to blog</a>
+         	</p>
+            <h1>
+                <a itemprop="url" href="{{ content.absolute_url }}" id="hubspot-name" class="link hubspot-editable" data-hubspot-form-id="name" data-hubspot-name="Blog Title"><span itemprop="name">{{ content.name }}</span></a>
+            </h1>
+            <div class="byline">
+            	<span itemprop="datePublished" content="{{ content.publish_date_local_time|datetimeformat('%B %e, %Y') }}" class="date">{{ content.publish_date_local_time|datetimeformat('%B %e, %Y') }}</span>
+                {% if content.blog_post_author %}
+                <span class="author"><span class="hs-author-label">by</span>                
+                    <a class="author-link" href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}">{{ content.blog_post_author.display_name }}</a>                                       
+                </span>
+                {% endif %}
+                 on 
+                {% if content.topic_list %}
+	             <span class="topics" id="hubspot-topic_data"> 					             	
+	                {% for topic in content.topic_list %}
+	                	<span itemprop="articleSection">
+	                    <a class="topic-link" href="{{ group.absolute_url }}/topic/{{ topic.slug }}">{{ topic.name }}</a></span>{% if not loop.last %},{% endif %}
+	                {% endfor %}
+	             </span>
+		        {% endif %}
+            </div>                      
+        </header>
+        <div class="section post-body">
+        	<span itemprop="articleBody">
+            {{ content.post_body }}
+        	</span>
+
+        	<div class="share">
+	            {% blog_social_sharing "blog_social_sharing" overrideable=False, label='Blog Social Sharing' %}
+            </div>        
+        </div>
+       {% if content.blog_post_author.bio %}
+        <footer class="section post-footer">        	 
+        	<div id="hubspot-author_data" class="hubspot-editable about-author" data-hubspot-form-id="author_data" data-hubspot-name="Blog Author">
+        		     	 	
+				<div class="row-fluid">					
+					{% if content.blog_post_author.avatar %}
+					<div class="span3">
+						<div class="hs-author-avatar"> <img width="35px" src="{{ content.blog_post_author.avatar }}"> </div> 
+					</div>
+					<div class="span9">					
+					{% else %}
+					<div class="span12">
+					{% endif %}
+					 	<div class="author-bio">					 		
+					    	<a class="author-link" href="{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}">
+					    	<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ content.blog_post_author.display_name }}</span></span>
+					    	</a>					    	
+					    	{{ content.blog_post_author.bio }}
+					    </div>
+					    {% if content.blog_post_author.has_social_profiles %}		            
+					    <div class="hs-author-social-section">
+					        <span class="hs-author-social-label">Find me on:</span>
+					        <div class="hs-author-social-links">
+					            {% if content.blog_post_author.facebook %}
+					                <a href="{{ content.blog_post_author.facebook }}" target="_blank" class="hs-author-social-link hs-social-facebook">Facebook </a>
+					            {% endif %}
+					            {% if content.blog_post_author.linkedin %}
+					                <a href="{{ content.blog_post_author.linkedin }}" target="_blank" class="hs-author-social-link hs-social-linkedin">LinkedIn</a>
+					            {% endif %}
+					            {% if content.blog_post_author.twitter %}
+					                <a href="{{ content.blog_post_author.twitter }}" target="_blank" class="hs-author-social-link hs-social-twitter">Twitter </a>
+					            {% endif %}
+					            {% if content.blog_post_author.google_plus %}
+					                <a href="{{ content.blog_post_author.google_plus }}?rel=author" target="_blank" class="hs-author-social-link hs-social-google-plus">Google+</a>
+					            {% endif %}
+					        </div>
+					    </div>
+					    {% endif %}
+					</div>
+				</div>
+	            
+        	</div>            
+        </footer>
+        {% endif %}
+    </div>
+</div>

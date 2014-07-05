@@ -1,0 +1,19 @@
+<!- Change billboard- to billboard-sm, billboard-md, billboard-lg, billboard-vh ->
+<div class="billboard-">
+	<div class="full-width-section">
+		<div class="row-fluid-wrapper">
+			<div class="row-fluid">
+				<div class="span12 billboard-content">
+					<div class="vert-content">
+					<div class="vert-content-inner">
+					{{ widget.billboard_content }}
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if widget.billboard_image.src %}
+    <div class="billboard-image" style="background-image:url({{ widget.billboard_image.src }});"></div>
+	{% endif %}	
+</div>

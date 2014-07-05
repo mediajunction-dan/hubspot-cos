@@ -1,0 +1,25 @@
+// PX to EM
+
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+
+/*
+Example (http://vvv.tobiassjosten.net/css/px-to-em-with-sass/)
+
+.title {
+    font-size: em(37px);
+}
+
+Nested Example
+
+.fine-print {
+    $font-size: 10px;
+    font-size: em($font-size);
+    .title {
+        font-size: em(10px, $font-size);
+    }
+}
+
+*/
